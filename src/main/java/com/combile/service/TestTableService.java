@@ -9,6 +9,8 @@ import java.util.Map;
 public interface TestTableService extends IService<TestTable> {
     List<TestTable> listTable(List<String> codes);
 
+    List<Map<String, Object>> listMap(List<String> codes);
+
 
     TestTable getOneByCode(String code);
 

@@ -3,6 +3,7 @@ package com.combile.controller;
 import com.combile.service.CombileRequestService;
 import com.combile.service.CombileRequestSimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +21,12 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("weimob")
 public class CombileRequestController {
     @Autowired
-    private CombileRequestService combileRequestService;
-    @Autowired
     private CombileRequestSimpleService combileRequestSimpleService;
 
-    @RequestMapping("hello")
-    public Map<String, Object> hello(String code) throws ExecutionException, InterruptedException {
-        return combileRequestSimpleService.queryByCode(code);
+    @RequestMapping("hello/{code}")
+    public Map<String, Object> hello(@PathVariable("code") String code) throws ExecutionException, InterruptedException {
+        Map<String, Object> map = combileRequestSimpleService.queryByCode(code);
+        System.out.println("查询结果是code-:" + map);
+        return map;
     }
 }

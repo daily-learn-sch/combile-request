@@ -14,12 +14,17 @@ spring:
     time-zone: GMT+8
     serialization:
       write-dates-as-timestamps: false
+  redis:
+    database: 2
+    host: 127.0.0.1
+    port: 6379
+    password: Sch12345678
 
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     auto-mapping-behavior: full
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:mapper/**/*Mapper.xml
   global-config:
     # 逻辑删除配置
@@ -28,3 +33,6 @@ mybatis-plus:
       logic-not-delete-value: 1
       # 删除后
       logic-delete-value: 0
+logging:
+    level:
+      com.combile.mapper: debug

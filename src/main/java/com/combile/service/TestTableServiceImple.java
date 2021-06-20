@@ -27,6 +27,13 @@ public class TestTableServiceImple extends ServiceImpl<TestTableMapper, TestTabl
     }
 
     @Override
+    public List<Map<String, Object>> listMap(List<String> codes) {
+        QueryWrapper<TestTable> queryWrapper = new QueryWrapper<>();
+        queryWrapper.in("code", codes);
+        return listMaps(queryWrapper);
+    }
+
+    @Override
     public TestTable getOneByCode(String code) {
         QueryWrapper<TestTable> queryWrapper = new QueryWrapper();
         queryWrapper.eq("code", code);
