@@ -1,3 +1,15 @@
+
+# Created by .ignore support plugin (hsz.mobi)
+.*
+*/.*
+classes
+build
+*/build
+output_zip/
+*/gen
+*/out
+*.iml
+*/*.iml
 .gradle/*
 .idea/*
 **/build/**
