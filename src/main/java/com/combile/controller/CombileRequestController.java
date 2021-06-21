@@ -1,11 +1,9 @@
 package com.combile.controller;
 
-import com.combile.service.CombileRequestService;
 import com.combile.service.CombileRequestSimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -18,7 +16,7 @@ import java.util.concurrent.ExecutionException;
  * @create: 2021-06-19 14:32
  **/
 @RestController
-@RequestMapping("weimob")
+@RequestMapping("combile")
 public class CombileRequestController {
     @Autowired
     private CombileRequestSimpleService combileRequestSimpleService;
