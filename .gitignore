@@ -16,5 +16,6 @@ gradle-wrapper.properties
 **/_state/**
 **/indices/**
 *.lock
-*/target/
+/target/
 .idea/sonarlint/**
+/.idea
